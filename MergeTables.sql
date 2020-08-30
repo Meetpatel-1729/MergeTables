@@ -19,8 +19,8 @@ PRINT 'GROUP 1 SELECT B'
 SELECT COUNT(*)
 FROM patients
 WHERE gender = 'M' AND patient_weight < (SELECT AVG(patient_weight)
-										 FROM patients
-										 WHERE gender = 'F');
+					 FROM patients
+				         WHERE gender = 'F');
 
 /********************************************/
 -- Group 2 - Sub-totals using GROUP BY 
@@ -98,4 +98,4 @@ PRINT 'GROUP 6 SELECT B'
 SELECT purchase_order_id, order_date, department_id
 FROM purchase_orders po
 WHERE purchase_order_id NOT IN (SELECT purchase_order_id
-								FROM purchase_order_lines);
+				FROM purchase_order_lines);
